@@ -13,7 +13,13 @@ const Navbar = (props) => {
   const privateLinks = (
     <ul>
       <li>
-        <a onClick={logoutUser} href='/'>
+        <Link to='/dashboard'>
+          <i className='fas fa-user'></i>{' '}
+          <span className='hide-sm'>Dashboard</span>
+        </Link>
+      </li>
+      <li>
+        <a onClick={logoutUser} href='/login'>
           <i className='fas fa-sign-out-alt'></i>{' '}
           <span className='hide-sm'>Logout</span>
         </a>

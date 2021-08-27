@@ -9,6 +9,12 @@ import { Provider } from 'react-redux';
 import store from './store';
 import './App.css';
 import { authUser } from './components/auth/authUser/action';
+import PrivateRoute from './components/Routing/PrivateRoute';
+import Dashboard from './components/Dashboard/index';
+import CreateProfile from './components/Create-Profile/index';
+import EditProfile from './components/Edit-Profile';
+import AddEducation from './components/Add-Education';
+import AddExperience from './components/Add-Experience';
 
 const App = () => {
   useEffect(() => {
@@ -26,6 +32,27 @@ const App = () => {
             <Switch>
               <Route exact path='/login' component={Login} />
               <Route exact path='/register' component={Register} />
+              <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              <PrivateRoute
+                exact
+                path='/create-profile'
+                component={CreateProfile}
+              />
+              <PrivateRoute
+                exact
+                path='/edit-profile'
+                component={EditProfile}
+              />
+              <PrivateRoute
+                exact
+                path='/add-education'
+                component={AddEducation}
+              />
+              <PrivateRoute
+                exact
+                path='/add-experience'
+                component={AddExperience}
+              />
             </Switch>
           </section>
         </Fragment>

@@ -51,7 +51,9 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      res.status(RESPONSE_STATUS.NOT_FOUND).json({ errors: errors.array() });
+      return res
+        .status(RESPONSE_STATUS.NOT_FOUND)
+        .json({ errors: errors.array() });
     }
 
     const {

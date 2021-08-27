@@ -6,6 +6,7 @@ import {
   LOGOUT_USER_SUCCESS,
   LOGOUT_USER_FAIL,
 } from './constants';
+import { CLEAR_PROFILE } from './../../Dashboard/constants';
 import API from './../../../services/api';
 const api = API.create();
 
@@ -38,6 +39,9 @@ export const logoutUser = () => async (dispatch) => {
     console.log(response);
     dispatch({
       type: LOGOUT_USER_SUCCESS,
+    });
+    dispatch({
+      type: CLEAR_PROFILE,
     });
   } catch (error) {
     console.log(error.response.data.errors);
