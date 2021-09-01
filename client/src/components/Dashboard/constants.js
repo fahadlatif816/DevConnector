@@ -11,3 +11,5 @@ export const UPDATE_PROFILE_SUCCESS = 'app/fetch/UPDATE_PROFILE_SUCCESS';
 export const UPDATE_PROFILE_FAIL = 'app/fetch/UPDATE_PROFILE_FAIL';
 
 export const CLEAR_PROFILE = 'app/CLEAR_PROFILE';
+export const GET_PROFILES = 'app/GET_PROFILES';
+export const GET_REPOS = 'app/GET_REPOS';

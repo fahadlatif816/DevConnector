@@ -31,6 +31,24 @@ const createFactory = () => {
   const addExperience = (params = {}) => {
     return axios.put('/api/profile/experience', params, config);
   };
+  const deleteEducation = (id) => {
+    return axios.delete(`/api/profile/education/${id}`, {}, config);
+  };
+  const deleteExperience = (id) => {
+    return axios.delete(`/api/profile/experience/${id}`, {}, config);
+  };
+  const deleteAccount = () => {
+    return axios.delete('/api/profile', {}, config);
+  };
+  const getProfiles = () => {
+    return axios.get('/api/profile', {}, config);
+  };
+  const getProfileByUserId = (userId) => {
+    return axios.get(`/api/profile/user/${userId}`, {}, config);
+  };
+  const getGithubRepos = (username) => {
+    return axios.get(`/api/profile/github/${username}`, {}, config);
+  };
 
   return {
     registerUser,
@@ -41,6 +59,12 @@ const createFactory = () => {
     createProfile,
     addExperience,
     addEducation,
+    deleteAccount,
+    deleteEducation,
+    deleteExperience,
+    getProfiles,
+    getProfileByUserId,
+    getGithubRepos,
   };
 };
 

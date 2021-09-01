@@ -10,6 +10,8 @@ import {
   UPDATE_PROFILE,
   UPDATE_PROFILE_SUCCESS,
   UPDATE_PROFILE_FAIL,
+  GET_REPOS,
+  GET_PROFILES,
 } from './constants';
 
 export default function dashboardReducer(state = initialState, action) {
@@ -26,6 +28,10 @@ export default function dashboardReducer(state = initialState, action) {
     case CREATE_PROFILE_FAIL:
     case UPDATE_PROFILE_FAIL:
       return { ...state, loading: false, error: action.payload };
+    case GET_REPOS:
+      return { ...state, repos: action.payload, loading: false };
+    case GET_PROFILES:
+      return { ...state, profiles: action.payload, loading: false };
     case CLEAR_PROFILE:
       return { ...state, profile: null, repos: [], loading: false };
     default:
